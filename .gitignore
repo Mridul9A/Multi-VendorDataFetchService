@@ -1,0 +1,28 @@
+# Node modules
+**/node_modules/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+**/Dockerfile
+**/Dockerfile.*
+docker-compose.override.yml
+
+# VSCode & OS
+.vscode/
+.DS_Store
+
+# Output
+dist/
+build/
+
+# Load test output
+load-test/results.txt

@@ -1,0 +1,36 @@
+  version: '3.8'
+  
+  services:
+    api:
+      build:
+        context: .
+        dockerfile: Dockerfiles/api.Dockerfile
+      ports:
+        - '8000:8000'
+      depends_on:
+        - mongo
+        - redis
+  
+    worker:
+      build:
+        context: .
+        dockerfile: Dockerfiles/worker.Dockerfile
+      depends_on:
+        - mongo
+        - redis
+  
+    vendors:
+      build:
+        context: .
+        dockerfile: Dockerfiles/vendors.Dockerfile
+      ports:
+        - '9000:9000'
+  
+    webhook:
+      build:
+        context: .
+        dockerfile: Dockerfiles/webhook.Dockerfile
+      ports:
+        - '8001:8001'
+      depends_on:
+        - mongo
